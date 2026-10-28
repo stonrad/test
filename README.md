@@ -4,7 +4,7 @@ Dans ce lab, nous réalisons une solution SD-WAN reliant un datacenter (hub) et 
 
 ## Topologie
 
-Topologie !(docs/images/topologie.png).
+Topologie ![topologie](docs/images/topologie.png).
 
 | Site | Rôle | LAN | ISP1 | ISP2 |
 |---|---|---|---|---|
