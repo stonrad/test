@@ -17,7 +17,7 @@ Deux overlays IPsec (un par ISP) relient chaque spoke au hub. Les adresses overl
 Les passerelles de chaque site sont les adresses `.1` des réseaux correspondants sur ISP1 et ISP2 (par exemple 1.1.1.1 et 2.2.1.1 pour London).
 
 ### Overlay
-![`docs/images/vue_overlay.png`](docs/images/vue_overlay.png)
+<img src="images/vue_overlay.png" width="700" alt="Vue overlay">
 | Overlay | Réseau | IP PARIS | IP LONDRES | IP ATLANTA |
 |---|---|---|---|---|
 | ISP1 (VPN-ISP1) | 10.254.1.0/24 | 10.254.1.254 | 10.254.1.1 | 10.254.1.2 |
