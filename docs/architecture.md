@@ -4,8 +4,6 @@
 
 Chaque site dispose de deux accès Internet ISP1 et ISP2 (underlay)
 Deux overlays IPsec (un par ISP) relient chaque spoke au hub. Les adresses overlay (10.254.1.0/24 et 10.254.2.0/24) sont distribuées dynamiquement par le hub (`mode-cfg`).
-
-### Underlay
 <img src="images/topologie.png" width="700" alt="Topologie">
 
 | Site | Rôle | port1 (ISP1) | port2 (ISP2) | port10 (LAN) |
@@ -16,15 +14,14 @@ Deux overlays IPsec (un par ISP) relient chaque spoke au hub. Les adresses overl
 
 Les passerelles de chaque site sont les adresses `.1` des réseaux correspondants sur ISP1 et ISP2 (par exemple 1.1.1.1 et 2.2.1.1 pour London).
 
-### Overlay
 <img src="images/vue_overlay.png" width="400" alt="Vue overlay">
+
+## Overlays IPsec
 
 | Overlay | Réseau | IP PARIS | IP LONDRES | IP ATLANTA |
 |---|---|---|---|---|
 | ISP1 (VPN-ISP1) | 10.254.1.0/24 | 10.254.1.254 | 10.254.1.1 | 10.254.1.2 |
 | ISP2 (VPN-ISP2) | 10.254.2.0/24 | 10.254.2.254 | 10.254.2.1 | 10.254.2.2 |
-
-## Overlays IPsec
 
 - IKEv2, un tunnel par ISP et par spoke : `VPN-ISP1` (via port1, `network-id 1`) et `VPN-ISP2` (via port2, `network-id 2`).
 - Sur le hub, les phase 1 sont de type `dynamic` : chaque spoke qui se connecte crée sa propre instance (`VPN-ISP1_0`, `VPN-ISP1_1`, etc.).
