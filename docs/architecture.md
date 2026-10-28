@@ -6,7 +6,7 @@ Chaque site dispose de deux accès Internet ISP1 et ISP2 (underlay)
 Deux overlays IPsec (un par ISP) relient chaque spoke au hub. Les adresses overlay (10.254.1.0/24 et 10.254.2.0/24) sont distribuées dynamiquement par le hub (`mode-cfg`).
 
 ### Underlay
-<img src="images/topology.png" width="600" alt="Topologie">
+<img src="images/topologie.png" width="600" alt="Topologie">
 
 | Site | Rôle | port1 (ISP1) | port2 (ISP2) | port10 (LAN) |
 |---|---|---|---|---|
