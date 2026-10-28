@@ -18,6 +18,7 @@ Les passerelles de chaque site sont les adresses `.1` des réseaux correspondant
 
 ### Overlay
 <img src="images/vue_overlay.png" width="400" alt="Vue overlay">
+
 | Overlay | Réseau | IP PARIS | IP LONDRES | IP ATLANTA |
 |---|---|---|---|---|
 | ISP1 (VPN-ISP1) | 10.254.1.0/24 | 10.254.1.254 | 10.254.1.1 | 10.254.1.2 |
