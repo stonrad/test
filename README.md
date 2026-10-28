@@ -4,21 +4,11 @@ Dans ce lab, nous réalisons une solution SD-WAN reliant un datacenter (hub) et 
 
 ## Topologie
 
-Topologie ![`topologie.png`](docs/images/topologie.png).
+Topologie ![`topologie.png`](docs/images/topologie.png)
 
-| Site | Rôle | LAN | ISP1 | ISP2 |
-|---|---|---|---|---|
-| Paris | Hub, datacenter | 192.168.0.0/24 | 1.1.0.2/24 | 2.2.0.2/24 |
-| London | Spoke | 192.168.1.0/24 | 1.1.1.2/24 | 2.2.1.2/24 |
-| Atlanta | Spoke | 192.168.2.0/24 | 1.1.2.2/24 | 2.2.2.2/24 |
+Trois sites, deux liens Internet simulés (ISP1 et ISP2) et deux overlays IPsec reliant chaque spoke au hub.
 
-Chaque site dispose de deux accès Internet ISP1 et ISP2 (underlay)
-Deux overlays IPsec (un par ISP) relient chaque spoke au hub. Les adresses overlay (10.254.1.0/24 et 10.254.2.0/24) sont distribuées dynamiquement par le hub (`mode-cfg`).
-
-| Overlay | Réseau | IP PARIS | IP LONDRES | IP ATLANTA |
-|---|---|---|---|---|
-| ISP1 (VPN-ISP1) | 10.254.1.0/24 | 10.254.1.254 | 10.254.1.1 | 10.254.1.2 |
-| ISP2 (VPN-ISP2) | 10.254.2.0/24 | 10.254.2.254 | 10.254.2.1 | 10.254.2.2 |
+Plus de détail de l'architecture dans  [`docs/architecture.md`](docs/architecture.md)
 
 ## Technologies
 
