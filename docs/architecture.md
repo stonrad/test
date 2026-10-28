@@ -7,6 +7,8 @@ Deux overlays IPsec (un par ISP) relient chaque spoke au hub. Les adresses overl
 
 ### Underlay
 ![`docs/images/topologie.png`](docs/images/topologie.png)
+
+![`topologie.png`](docs/images/topologie.png)
 | Site | Rôle | port1 (ISP1) | port2 (ISP2) | port10 (LAN) |
 |---|---|---|---|---|
 | FG-PARIS | Hub, datacenter | 1.1.0.2/24 | 2.2.0.2/24 | 192.168.0.1/24 |
