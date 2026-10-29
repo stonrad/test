@@ -12,9 +12,9 @@
 # Tests de connectivité de l'overlay 
 
 ### Connectivité de LONDON Vers PARIS
-![`ping-ike-gateway-isp1.png`](../evidence/ping-london-ike-gateway-isp1.png)
-![`ping-ike-gateway-isp2.png`](../evidence/ping-london-ike-gateway-isp2.png)
+<img src="../evidence/ping-london-ike-gateway-isp1.png" width="400" alt="ping-london-ike-gateway-isp1">
+<img src="../evidence/ping-london-ike-gateway-isp2.png" width="400" alt="ping-london-ike-gateway-isp2">
 
 ### Connectivité de ATLANTA Vers PARIS
-![`ping-ike-gateway-isp1.png`](../evidence/ping-atlanta-ike-gateway-isp1.png)
-![`ping-ike-gateway-isp2.png`](../evidence/ping-atlanta-ike-gateway-isp2.png)
+<img src="../evidence/ping-atlanta-ike-gateway-isp1.png" width="400" alt="ping-atlanta-ike-gateway-isp1">
+<img src="../evidence/ping-atlanta-ike-gateway-isp2.png" width="400" alt="ping-atlanta-ike-gateway-isp2">
