@@ -41,6 +41,8 @@ Membres de la zone `virtual-wan-link` : VPN-ISP1, VPN-ISP2 (coût 50), port1 et 
 | `hub_sla` | 192.168.0.1 | latence 100 ms, gigue 30 ms, perte 3 % |
 | `Default_Google Search` | 8.8.8.8 (ping) | latence 50 ms, gigue 50 ms, perte 5 % |
 
+De plus, une hystérésis de 10% est appliquée pour qu'un lien actif ne soit remplacé que si un autre est meilleur d'au moins 10% ce qui permet d'éviter que le trafic ne bascule en permanence entre deux liens de qualité équivalente
+
 **Règles**
 
 | Règle | Trafic | Comportement |
