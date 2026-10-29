@@ -4,7 +4,7 @@ Dans ce lab, nous réalisons une solution SD-WAN reliant un datacenter (hub) et 
 
 ## Topologie
 
-<img src="images/topologie.png" width="700" alt="Topologie">
+<img src="docs/images/topologie.png" width="700" alt="Topologie">
 
 Trois sites, deux liens Internet simulés (ISP1 et ISP2) et deux overlays IPsec reliant chaque spoke au hub.
 
