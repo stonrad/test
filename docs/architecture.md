@@ -3,7 +3,7 @@
 ## Vue d'ensemble
 
 Chaque site dispose de deux accès Internet ISP1 et ISP2 (underlay)
-Deux overlays IPsec (un par ISP) relient chaque spoke au hub. Les adresses overlay (10.254.1.0/24 et 10.254.2.0/24) sont distribuées dynamiquement par le hub (`mode-cfg`).
+Deux overlays IPsec (un par ISP) relient chaque spoke au hub. Les adresses overlay (10.254.1.0/24 et 10.254.2.0/24) sont distribuées dynamiquement par le hub.
 <img src="images/topologie.png" width="700" alt="Topologie">
 
 | Site | Rôle | port1 (ISP1) | port2 (ISP2) | port10 (LAN) |
@@ -27,7 +27,28 @@ Les passerelles de chaque site sont les adresses `.1` des réseaux correspondant
 - Le hub distribue les adresses overlay par `mode-cfg` : pool 10.254.1.1 à 10.254.1.250 pour l'overlay 1, 10.254.2.1 à 10.254.2.250 pour l'overlay 2. L'adresse du hub est 10.254.1.254 sur l'overlay 1 et 10.254.2.254 sur l'overlay 2.
 - L'attribution suit l'ordre de connexion des spokes : les adresses overlay d'un site peuvent donc changer après une reconnexion.
 - Le hub a `auto-discovery-sender` et les spokes `auto-discovery-receiver`, ce qui permet les shortcuts ADVPN.
-- Propositions de chiffrement `des-md5` / `des-sha1` : acceptables uniquement en lab.
+- Propositions de chiffrement `des-md5` / `des-sha1`
+
+## SD-WAN des spokes
+
+Membres de la zone `virtual-wan-link` : VPN-ISP1, VPN-ISP2 (coût 50), port1 et port2 (sorties Internet directes).
+
+**Sondes (health-checks)**
+
+| Sonde | Cible | Seuils |
+|---|---|---|
+| `srv1` | 192.168.0.2 | latence 50 ms, gigue 10 ms |
+| `hub_sla` | 192.168.0.1 | latence 100 ms, gigue 30 ms, perte 3 % |
+| `Default_Google Search` | 8.8.8.8 (ping) | latence 50 ms, gigue 50 ms, perte 5 % |
+
+**Règles**
+
+| Règle | Trafic | Comportement |
+|---|---|---|
+| `lan-DC` | vers `srv1` | `mode priority`, sonde `srv1`, membres 1 et 2 |
+| `gmail` | service Google-Gmail | membre 3 (port1) |
+| `branch-sites` | vers 192.168.0.0/16 | mode SLA, membres 1 et 2 |
+| `internet` | tout le reste | `load-balance`, membres 4, 3, 2, 1 (round-robin observé) |
 
 ## Routage BGP
 
@@ -53,26 +74,6 @@ Les sondes SLA d'un spoke ne contrôlent que le trafic sortant du spoke. Pour qu
 
 Quand l'overlay 1 d'un spoke est dégradé, sa route via l'overlay 1 porte le tag 11 et seule la règle du tag 2 correspond encore : le retour passe par l'overlay 2.
 
-## SD-WAN des spokes
-
-Membres de la zone `virtual-wan-link` : VPN-ISP1, VPN-ISP2 (coût 50), port1 et port2 (sorties Internet directes).
-
-**Sondes (health-checks)**
-
-| Sonde | Cible | Seuils |
-|---|---|---|
-| `srv1` | 192.168.0.2 | latence 50 ms, gigue 10 ms |
-| `hub_sla` | 192.168.0.1 | latence 100 ms, gigue 30 ms, perte 3 % |
-| `Default_Google Search` | 8.8.8.8 (ping) | latence 50 ms, gigue 50 ms, perte 5 % |
-
-**Règles**
-
-| Règle | Trafic | Comportement |
-|---|---|---|
-| `lan-DC` | vers `srv1` | `mode priority`, sonde `srv1`, membres 1 et 2 |
-| `gmail` | service Google-Gmail | membre 3 (port1) |
-| `branch-sites` | vers 192.168.0.0/16 | mode SLA, membres 1 et 2 |
-| `internet` | tout le reste | `load-balance`, membres 4, 3, 2, 1 (round-robin observé) |
 
 ## Routage statique
 
