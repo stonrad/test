@@ -1,13 +1,13 @@
 # Tests de connectivité de l'underlay depuis PARIS
 
 ### Vers LONDON
-![`ping-london.png`](../evidences/ping-london.png)
+![`ping-london.png`](../evidence/ping-london.png)
 
 ### Vers ATLANTA
-![`ping-atlanta.png`](../evidences/ping-atlanta.png)
+![`ping-atlanta.png`](../evidence/ping-atlanta.png)
 
 ### Vers Internet
-![`ping-internet.png`](../evidences/ping-internet.png)
+![`ping-internet.png`](../evidence/ping-internet.png)
 
 # Tests de connectivité de l'overlay 
 
