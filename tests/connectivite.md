@@ -1,20 +1,20 @@
 # Tests de connectivité de l'underlay depuis PARIS
 
 ### Vers LONDON
-![`ping-london.png`](../evidence/ping-london.png)
+<img src="../evidence/ping-london.png" width="400" alt="ping-london">
 
 ### Vers ATLANTA
-![`ping-atlanta.png`](../evidence/ping-atlanta.png)
+<img src="../evidence/ping-atlanta.png" width="400" alt="ping-atlanta">
 
 ### Vers Internet
-![`ping-internet.png`](../evidence/ping-internet.png)
+<img src="../evidence/ping-internet.png" width="400" alt="ping-internet">
 
 # Tests de connectivité de l'overlay 
 
 ### Connectivité de LONDON Vers PARIS
-![`ping-ike-gateway-isp1.png`](evidences/images/ping-london-ike-gateway-isp1.png)
-![`ping-ike-gateway-isp2.png`](evidences/images/ping-london-ike-gateway-isp2.png)
+<img src="../evidence/ping-london-ike-gateway-isp1.png" width="400" alt="ping-london-ike-gateway-isp1">
+<img src="../evidence/ping-london-ike-gateway-isp2.png" width="400" alt="ping-london-ike-gateway-isp2">
 
 ### Connectivité de ATLANTA Vers PARIS
-![`ping-ike-gateway-isp1.png`](evidences/images/ping-atlanta-ike-gateway-isp1.png)
-![`ping-ike-gateway-isp2.png`](evidences/images/ping-atlanta-ike-gateway-isp2.png)
+<img src="../evidence/ping-atlanta-ike-gateway-isp1.png" width="400" alt="ping-atlanta-ike-gateway-isp1">
+<img src="../evidence/ping-atlanta-ike-gateway-isp2.png" width="400" alt="ping-atlanta-ike-gateway-isp2">
